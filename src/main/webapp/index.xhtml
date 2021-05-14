@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <html>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Pagina de Bienvenida</title>
+        </h:head>
+
+        <h:body >
+            <h:form>
+                <h:panelGroup>
+                    <p:panel>
+                        <div align="center">
+                            <p:graphicImage value="/imagenes/bienvenidoBanner.png" />
+                        </div>
+
+
+
+                        <p:outputPanel  deferred="true">
+                            <div align="center">
+                                <h3>  Sotfware Apoyo EPS </h3>
+                                <br/>
+                                <FONT FACE="verdana">Es un desarrollo de software que permite el agendamiento de citas en una EPS, con las opciones de eliminarlas y modificarlas 
+                                    facilitando el proceso de agendamiento mediate una pagina web</FONT>
+                            </div>
+                        </p:outputPanel>        
+
+
+                        <br/><br/><br/>
+
+                        <div align="center">
+                            <p:commandButton value="Ingresar " action="inicio" />
+                        </div>   
+
+
+                        <br/><br/><br/>
+                    </p:panel>
+                    <p:panel>
+                        <footer>
+                            <div aling="center">
+                                <p:graphicImage value="/imagenes/un-pasado-ejemplar.jpg" width="30" height="30" alt="BenKo?s Art" />
+                                Universidad Central -
+                                Diego Alejandro Gomez Sotelo -
+                                Giovanny Alexander Briceño Riveros
+                            </div>
+                        </footer>
+                    </p:panel>
+                </h:panelGroup>
+            </h:form>
+        </h:body>
+    </html>
+</f:view>
