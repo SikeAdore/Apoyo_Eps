@@ -11,49 +11,27 @@
         <h:head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <title>Pagina de Bienvenida</title>
+            <link href="estilos.css" rel="stylesheet" type="text/css"/>
         </h:head>
-
         <h:body >
-            <h:form>
-                <h:panelGroup>
-                    <p:panel>
-                        <div align="center">
-                            <p:graphicImage value="/imagenes/bienvenidoBanner.png" />
-                        </div>
+            <h2>Software Apoyo EPS</h2>
+            <div class="contenedorD">
+                <div>
+                    <h1>
+                        <img class="imagenLogoD" src="imagenes/logoSalud.jpg" alt=""/>
+                        B I E N V E N I D O
+                        <img class="imagenLogoI" src="imagenes/logoSalud.jpg" alt=""/>
+                    </h1> 
 
 
+                </div>
+                <div>
+                    <h3>Descripcion:</h3>
 
-                        <p:outputPanel  deferred="true">
-                            <div align="center">
-                                <h3>  Sotfware Apoyo EPS </h3>
-                                <br/>
-                                <FONT FACE="verdana">Es un desarrollo de software que permite el agendamiento de citas en una EPS, con las opciones de eliminarlas y modificarlas 
-                                    facilitando el proceso de agendamiento mediate una pagina web</FONT>
-                            </div>
-                        </p:outputPanel>        
-
-
-                        <br/><br/><br/>
-
-                        <div align="center">
-                            <p:commandButton value="Ingresar " action="inicio" />
-                        </div>   
-
-
-                        <br/><br/><br/>
-                    </p:panel>
-                    <p:panel>
-                        <footer>
-                            <div aling="center">
-                                <p:graphicImage value="/imagenes/un-pasado-ejemplar.jpg" width="30" height="30" alt="BenKo?s Art" />
-                                Universidad Central -
-                                Diego Alejandro Gomez Sotelo -
-                                Giovanny Alexander Briceño Riveros
-                            </div>
-                        </footer>
-                    </p:panel>
-                </h:panelGroup>
-            </h:form>
+                </div>
+            </div>
+           
+            
         </h:body>
     </html>
 </f:view>
