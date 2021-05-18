@@ -12,26 +12,46 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <title>Pagina de Bienvenida</title>
             <link href="estilos.css" rel="stylesheet" type="text/css"/>
+            
+           
         </h:head>
         <h:body >
-            <h2>Software Apoyo EPS</h2>
-            <div class="contenedorD">
-                <div>
-                    <h1>
-                        <img class="imagenLogoD" src="imagenes/logoSalud.jpg" alt=""/>
-                        B I E N V E N I D O
-                        <img class="imagenLogoI" src="imagenes/logoSalud.jpg" alt=""/>
-                    </h1> 
-
-
-                </div>
-                <div>
-                    <h3>Descripcion:</h3>
-
-                </div>
-            </div>
-           
-            
+            <main>
+                <h3 class="titulo">Software Apoyo EPS</h3>
+                <section class="contenedor banner">
+                    <div class="contenedor-banner">
+                        <img src="imagenes/logoSalud.jpg" alt="" class="imagen-salud"/>
+                        <h1>B</h1>
+                        <h1>I</h1>
+                        <h1>E</h1>
+                        <h1>N</h1>
+                        <h1>V</h1>
+                        <h1>E</h1>
+                        <h1>N</h1>
+                        <h1>I</h1>
+                        <h1>D</h1>
+                        <h1>O</h1>
+                        <img src="imagenes/logoSalud.jpg" alt="" class="imagen-salud"/>
+                    </div>
+                </section>
+                <section class="contenedor descripcion">
+                    <div class="contenedor-descripcion">
+                        <h3 class="titulo">Descripcion:</h3>
+                        <h4>Este es un desarrollo software que permite agendaar citas por medio de un siotio web, tambien se pueden realizar
+                            operacione de consultas sobre las citas agendadas de un paciente, asi como modificarlas o cancelarlas</h4>
+                        <h:form >
+                            <p:commandButton  value="Ingresar" action="inicio" />
+                        </h:form>
+                    </div>
+                </section>
+                <footer>
+                    <div class="contenedor-footer">
+                        <img src="imagenes/un-pasado-ejemplar.jpg" alt="" class="imagen-logoU"/>
+                        <h4>Universidad Central - Autor: Diego Alejandro Gomez Sotelo - Tutor: Giovanny Alexander Briceño Riveros</h4>
+                        <img src="imagenes/un-pasado-ejemplar.jpg" alt="" class="imagen-logoU" />
+                    </div>
+                </footer>
+            </main>
         </h:body>
     </html>
 </f:view>
