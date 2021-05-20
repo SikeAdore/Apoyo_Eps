@@ -25,7 +25,7 @@ public class AgendarBean implements Serializable{
 
     private Long id;
     private String nombre;
-    private Integer documento;
+    private String documento;
     private Date fecha;
     private String hora;
     private String tipoCita;
@@ -40,11 +40,11 @@ public class AgendarBean implements Serializable{
         this.nombre = nombre;
     }
 
-    public Integer getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public void setDocumento(Integer documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
    

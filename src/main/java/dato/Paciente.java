@@ -11,7 +11,7 @@ package dato;
  */
 public class Paciente {
     private String nombre;
-    private Integer documento;
+    private String documento;
 
     public String getNombre() {
         return nombre;
@@ -21,11 +21,11 @@ public class Paciente {
         this.nombre = nombre;
     }
 
-    public Integer getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public void setDocumento(Integer documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
     

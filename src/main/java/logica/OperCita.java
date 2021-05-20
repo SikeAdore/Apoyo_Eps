@@ -31,7 +31,7 @@ public class OperCita implements Operaciones<Cita> {
                 String sql = "insert into citas (nombre_p, documento_p, fecha, hora, tipo, pertenece ) values (?,?,?,?,?,?)";
                 PreparedStatement ps =  cActiva.prepareStatement(sql);
                 ps.setString(1, dato.getPaciente().getNombre());
-                ps.setInt(2,dato.getPaciente().getDocumento());
+                ps.setString(2,dato.getPaciente().getDocumento());
                 ps.setDate(3,dato.getFecha());
                 ps.setString(4, dato.getHora());
                 ps.setString(5, dato.getTipoCita());
