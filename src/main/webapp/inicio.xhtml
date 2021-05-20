@@ -11,31 +11,31 @@
         <h:head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <title>Pagina Principal</title>
+            <link href="estilos.css" rel="stylesheet" type="text/css"/>
         </h:head>
 
         <h:body >
-            <div class="card" >
-                <h1 align="center">Seleccione la opcion deseada</h1>
-            <br/><br/><br/>
-
-                <p:panelGrid  columns="2" layout="grid" styleClass="showcase-text-align-center"
-                             columnClasses="ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-6 ui-lg-3">
-                    
-                    <h:form>
-                        <p:commandButton  value="Agendar Cita " action="agendar"  />
-                    </h:form>
-
-                    <h:outputText value="Agende una cita"/>
-
-
-                    <h:form>
-                        <p:commandButton value="Consultar Citas " action="consultar" />
-                    </h:form>
-
-                    <h:outputText value="Consulte las citas de un paciente" />
-
-                </p:panelGrid>
-            </div>
+            <main>
+                <h2 class="titulo">Seleccione la opcion deseada</h2>
+                <section class="contenedor opciones">
+                    <div class="contenedor-opciones" >
+                        <div class="opcion">
+                            <h:form class="boton-p">
+                                <p:commandButton  value="Agendar Cita " action="agendar"  />
+                            </h:form>
+                            <h:outputText value="Agende una cita"/>
+                            <img src="imagenes/agendar.png" alt="" class="imagenIlustracion"/>
+                        </div >
+                        <div class="opcion">
+                            <h:form class="boton-p">
+                                <p:commandButton value="Consultar Citas " action="consultar" />
+                            </h:form>
+                            <h:outputText value="Consulte las citas de un paciente" />
+                            <img src="imagenes/consultar.jpg" alt="" class="imagenIlustracion"/>
+                        </div>
+                    </div>
+                </section> 
+            </main>
         </h:body>
     </html>
 </f:view>

@@ -11,96 +11,82 @@
         <h:head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <title>Agendar Cita</title>
+            <link href="estilos.css" rel="stylesheet" type="text/css"/>
         </h:head>
         
         <h:body>
-            <p:panel header="Crear una Cita">
-                    <br/>
-                    <span class="ui-float-label">
-                        <p:inputText id="nombre" value="#{agendarBean.nombre}"/>
-                        <p:outputLabel for="@previous" value="Nombre Paciente"/>
-                    </span>
-                    <br/>
-                    <span class="ui-float-label">
-                        <p:inputText id="documento" value="#{agendarBean.documento}"/>
-                        <p:outputLabel for="@previous" value="Documento Paciente"/>
-                    </span>
-                    <br/>
-                    <div class="p-field p-col-12 p-md-4">
-                        <p:outputLabel for="fecha" value="Fecha de La Cita: "/>
-                        <p:datePicker id="fecha" value="#{agendarBean.fecha}" />
+            <main>
+                <h2 class="titulo">Agendar Cita</h2>
+                <section class="contenedor infoCita">
+                    <h3 class="subtitulo">Datos Cita:</h3>
+                    <div class="contenedor-info">
+                        <div class="contenedor-infoI">
+                            <span  class="ui-float-label">
+                                <p:inputText id="nombre" value="#{agendarBean.nombre}"/>
+                                <p:outputLabel for="@previous" value="Nombre Paciente"/>
+                            </span>
+                            <br/>
+                            <span class="ui-float-label">
+                                <p:inputText id="documento" value="#{agendarBean.documento}"/>
+                                <p:outputLabel for="@previous" value="Documento Paciente"/>
+                            </span>
+                            <br/>
+                            <p:outputLabel for="@next" value="Hora Cita:"/>
+                            <br/>
+                            <p:selectOneMenu id="hora" value="#{agendarBean.hora}" label="Seleccione la hora de la cita">
+                                <f:selectItem itemLabel="6:00" itemValue="6:00"/>
+                                <f:selectItem itemLabel="7:00" itemValue="7:00"/>
+                                <f:selectItem itemLabel="8:00" itemValue="8:00"/>
+                                <f:selectItem itemLabel="9:00" itemValue="9:00"/>
+                                <f:selectItem itemLabel="10:00" itemValue="10:00"/>
+                                <f:selectItem itemLabel="11:00" itemValue="11:00"/>
+                                <f:selectItem itemLabel="12:00" itemValue="12:00"/>
+                                <f:selectItem itemLabel="13:00" itemValue="13:00"/>
+                            </p:selectOneMenu>
+                            <br/>
+                            <p:outputLabel for="@next" value="Tipo Cita:"/>
+                            <br/>
+                            <p:selectOneMenu id="tipoCita" value="#{agendarBean.tipoCita}" label="Seleccione Tipo cita">
+                                <f:selectItem itemLabel="Medicina General" itemValue="Medician General"/>
+                                <f:selectItem itemLabel="Especialista" itemValue="Especialista"/>
+                                <f:selectItem itemLabel="Odontología" itemValue="Odontología"/>
+                                <f:selectItem itemLabel="Ortopedia" itemValue="Ortopedia"/>
+                                <f:selectItem itemLabel="Neurología" itemValue="Neurología"/>
+                                <f:selectItem itemLabel="Oftalmología" itemValue="Oftalmología"/>
+                                <f:selectItem itemLabel="Toma de Muestras" itemValue="Toma de Muestras"/>
+                                <f:selectItem itemLabel="Examen Especializado" itemValue="Examen Especializado"/>
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="contenedor-infoD">
+                            <h5 >Pertenece a la EPS:</h5>
+                            <br/>
+                            <h:form>
+                                <p:selectOneButton value="#{agendarBean.pertenece}">
+                                    <f:selectItem itemLabel="Si" itemValue="Si"/>
+                                    <f:selectItem itemLabel="No" itemValue="No"/>
+                                </p:selectOneButton>
+                            </h:form>
+                            <br/>
+                            <p:outputLabel for="fecha" value="Fecha de La Cita: "/>
+                            <br/>
+                            <p:datePicker id="fecha" value="#{agendarBean.fecha}" />
+                            
+                        </div>
                     </div>
-                    <br/>
-                    <span >
-                        <p:outputLabel for="@next" value="Hora Cita"/>
-                        <br/>
-                        <p:selectOneMenu id="hora" value="#{agendarBean.hora}" label="Seleccione la hora de la cita">
-                            <f:selectItem itemLabel="6:00" itemValue="6:00"/>
-                            <f:selectItem itemLabel="7:00" itemValue="7:00"/>
-                            <f:selectItem itemLabel="8:00" itemValue="8:00"/>
-                            <f:selectItem itemLabel="9:00" itemValue="9:00"/>
-                            <f:selectItem itemLabel="10:00" itemValue="10:00"/>
-                            <f:selectItem itemLabel="11:00" itemValue="11:00"/>
-                            <f:selectItem itemLabel="12:00" itemValue="12:00"/>
-                            <f:selectItem itemLabel="13:00" itemValue="13:00"/>
-                        </p:selectOneMenu>
-
-                    </span>
-                    <br/>
-                    <span >
-                        <p:outputLabel for="@next" value="Tipo Cita"/>
-                        <br/>
-                        <p:selectOneMenu id="tipoCita" value="#{agendarBean.tipoCita}" label="Seleccione Tipo cita">
-                            <f:selectItem itemLabel="Medicina General" itemValue="Medician General"/>
-                            <f:selectItem itemLabel="Especialista" itemValue="Especialista"/>
-                            <f:selectItem itemLabel="Odontología" itemValue="Odontología"/>
-                            <f:selectItem itemLabel="Ortopedia" itemValue="Ortopedia"/>
-                            <f:selectItem itemLabel="Neurología" itemValue="Neurología"/>
-                            <f:selectItem itemLabel="Oftalmología" itemValue="Oftalmología"/>
-                            <f:selectItem itemLabel="Toma de Muestras" itemValue="Toma de Muestras"/>
-                            <f:selectItem itemLabel="Examen Especializado" itemValue="Examen Especializado"/>
-                        </p:selectOneMenu>
-
-                    </span>
-                    <br/>
-                  
-                    <h4>Pertenece a la EPS</h4>
                     
-                    <span>
-                        
-                        <h:form>
-                            <p:selectOneButton value="#{agendarBean.pertenece}">
-                                <f:selectItem itemLabel="Si" itemValue="Si"/>
-                                <f:selectItem itemLabel="No" itemValue="No"/>
-                            </p:selectOneButton>
-                        </h:form>
-                    </span>
-                    <br/>
-                    
-                    <p:panelGrid  columns="2" layout="grid" styleClass="showcase-text-align-center"
-                                  columnClasses="ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-6 ui-lg-3">
-
-                        <h:form>
-                            <p:commandButton value="Agendar Cita " action="#{agendarBean.guardar()}" update=" msg"/>
-                        </h:form>
-
-                        
-
-
-                        <h:form>
-                            <p:commandButton value="Cancelar " action="#{agendarBean.volver()}" />
-                        </h:form>
-
-                        
-
-                    </p:panelGrid>           
-
-                    <br/>
-                    
-                    <h:outputLabel id="msg" value="#{agendarBean.mensaje}" />
-
-                </p:panel>
-                <br/>
+                </section>
+                <section class="contenedor botones">
+                    <div class="contenedor-botones">
+                            <h:form class="botonA">
+                                <p:commandButton value="Agendar Cita " action="#{agendarBean.guardar()}" update=" msg"/>
+                            </h:form>
+                            <h:form class="botonA">
+                                <p:commandButton value="Cancelar " action="#{agendarBean.volver()}" />
+                            </h:form> 
+                        </div>
+                        <h:outputLabel id="msg" value="#{agendarBean.mensaje}" />
+                </section>
+            </main>
         </h:body>
     </html>
 </f:view>

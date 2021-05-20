@@ -113,11 +113,10 @@ public class AgendarBean implements Serializable{
         }else{
             System.out.println("doc error");
             this.mensaje = "error ";
-            return "";
         }
         c.setFecha(this.fecha);
         c.setHora(this.hora);
-        c.setTipoCita(tipoCita);
+        c.setTipoCita(this.tipoCita);
         c.setPertenece(this.pertenece);
         this.mensaje = "Se almacenó";
         System.out.println("cita:"+c.getFecha().toString()+c.getHora()+c.getTipoCita());

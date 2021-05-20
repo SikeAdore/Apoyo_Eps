@@ -32,7 +32,7 @@ public class OperCita implements Operaciones<Cita> {
                 PreparedStatement ps =  cActiva.prepareStatement(sql);
                 ps.setString(1, dato.getPaciente().getNombre());
                 ps.setInt(2,dato.getPaciente().getDocumento());
-                ps.setString(3, dato.getFecha().toString());
+                ps.setDate(3,dato.getFecha());
                 ps.setString(4, dato.getHora());
                 ps.setString(5, dato.getTipoCita());
                 ps.setString(6, dato.getPertenece());
