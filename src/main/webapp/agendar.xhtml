@@ -19,8 +19,9 @@
                 <h2 class="titulo">Agendar Cita</h2>
                 <section class="contenedor infoCita">
                     <h3 class="subtitulo">Datos Cita:</h3>
-                    <div class="contenedor-info">
+                    <h:form class="contenedor-info">
                         <div class="contenedor-infoI">
+                        
                             <span  class="ui-float-label">
                                 <p:inputText id="nombre" value="#{agendarBean.nombre}"/>
                                 <p:outputLabel for="@previous" value="Nombre Paciente"/>
@@ -33,7 +34,7 @@
                             <br/>
                             <p:outputLabel for="@next" value="Hora Cita:"/>
                             <br/>
-                            <p:selectOneMenu id="hora" value="#{agendarBean.hora}" label="Seleccione la hora de la cita">
+                            <p:selectOneMenu id="hora" value="#{agendarBean.hora}" >
                                 <f:selectItem itemLabel="6:00" itemValue="6:00"/>
                                 <f:selectItem itemLabel="7:00" itemValue="7:00"/>
                                 <f:selectItem itemLabel="8:00" itemValue="8:00"/>
@@ -72,19 +73,19 @@
                             <p:datePicker id="fecha" value="#{agendarBean.fecha}" />
                             
                         </div>
-                    </div>
+                    </h:form>
                     
                 </section>
                 <section class="contenedor botones">
-                    <div class="contenedor-botones">
-                            <h:form class="botonA">
+                    <h:form class="contenedor-botones">
+                            <div class="botonA">
                                 <p:commandButton value="Agendar Cita " action="#{agendarBean.guardar()}" update=" msg"/>
-                            </h:form>
-                            <h:form class="botonA">
+                            </div>
+                            <div class="botonA">
                                 <p:commandButton value="Cancelar " action="#{agendarBean.volver()}" />
-                            </h:form> 
-                        </div>
-                        <h:outputLabel id="msg" value="#{agendarBean.mensaje}" />
+                            </div> 
+                    </h:form>
+                    <h:outputLabel id="msg" value="#{agendarBean.mensaje}" />
                 </section>
             </main>
         </h:body>
