@@ -100,36 +100,26 @@ public class AgendarBean implements Serializable{
     public String guardar(){
         Cita c = new Cita();
         Paciente p = new Paciente();
-        if(this.nombre != null || this.nombre != ""){
-            p.setNombre(this.nombre);  
-        }else{
-            System.out.println(this.nombre);
-            this.mensaje = "error";
-            
-        }
-        if(this.documento != null ){
+        if(this.nombre != null && this.documento != null && this.fecha != null && this.hora != null && this.pertenece != null && this.tipoCita != null){
+            p.setNombre(this.nombre);
             p.setDocumento(this.documento);
             c.setPaciente(p);
+            c.setFecha(this.fecha);
+            c.setHora(this.hora);
+            c.setTipoCita(this.tipoCita);
+            c.setPertenece(this.pertenece);
+            this.mensaje = "Se almacenó";
+            OperCita op = new OperCita();
+            if (op.insertar(c) > 0) {
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se agendó la cita exitosamente"));
+                return "inicio";
+            } else {
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Warning", "Se presentó inconveniente en el almacenamiento, intente mas tarde "));
+                return "agendar";
+            }
         }else{
-            System.out.println("doc error");
-            this.mensaje = "error ";
-        }
-        c.setFecha(this.fecha);
-        c.setHora(this.hora);
-        c.setTipoCita(this.tipoCita);
-        c.setPertenece(this.pertenece);
-        this.mensaje = "Se almacenó";
-        System.out.println("cita:"+c.getFecha().toString()+c.getHora()+c.getTipoCita());
-        OperCita op = new OperCita();
-       
-        if(op.insertar(c)>0){
-            
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se agendó la cita exitosamente"));
-            return"inicio";
-        }
-        else{
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Warning", "Se presentó inconveniente en el almacenamiento, intente mas tarde "));
-            return "";
+            this.mensaje = "Error, llene los campos de información e intente de nuevo ";
+            return "agendar";
         }
         
     }
