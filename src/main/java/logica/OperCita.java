@@ -26,13 +26,13 @@ public class OperCita implements Operaciones<Cita> {
     public int insertar(Cita dato) {
         Conexiones c = new Conexiones();
         Connection cActiva = c.conectarse();
-        if (cActiva != null || dato != null || dato.getPaciente()!= null){
+        if (cActiva != null && dato != null && dato.getPaciente()!= null){
             try {
                 String sql = "insert into citas (nombre_p, documento_p, fecha, hora, tipo, pertenece ) values (?,?,?,?,?,?)";
                 PreparedStatement ps =  cActiva.prepareStatement(sql);
                 ps.setString(1, dato.getPaciente().getNombre());
                 ps.setString(2,dato.getPaciente().getDocumento());
-                ps.setDate(3,dato.getFecha());
+                ps.setString(3,dato.getFecha().toString());
                 ps.setString(4, dato.getHora());
                 ps.setString(5, dato.getTipoCita());
                 ps.setString(6, dato.getPertenece());

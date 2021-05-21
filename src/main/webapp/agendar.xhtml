@@ -17,6 +17,9 @@
         <h:body>
             <main>
                 <h:form>
+                    <p:messages id="messages" showDetail="true" closable="true">
+                    <p:autoUpdate/>
+                    </p:messages>
                     <h2 class="titulo">Agendar Cita</h2>
                     <section class="contenedor infoCita">
                         <h3 class="subtitulo">Datos Cita:</h3>
@@ -28,7 +31,9 @@
                                 </span>
                                 <br/>
                                 <span class="ui-float-label">
-                                    <p:inputText id="documento" value="#{agendarBean.documento}"/>
+                                    <p:inputText id="documento" value="#{agendarBean.documento}">
+                                    <p:keyFilter mask="num" />
+                                    </p:inputText>
                                     <p:outputLabel for="@previous" value="Documento Paciente"/>
                                 </span>
                                 <br/>
@@ -43,12 +48,17 @@
                                     <f:selectItem itemLabel="11:00" itemValue="11:00"/>
                                     <f:selectItem itemLabel="12:00" itemValue="12:00"/>
                                     <f:selectItem itemLabel="13:00" itemValue="13:00"/>
+                                    <f:selectItem itemLabel="14:00" itemValue="14:00"/>
+                                    <f:selectItem itemLabel="15:00" itemValue="15:00"/>
+                                    <f:selectItem itemLabel="14:00" itemValue="16:00"/>
+                                    <f:selectItem itemLabel="16:00" itemValue="17:00"/>
+                                    <f:selectItem itemLabel="17:00" itemValue="18:00"/>
                                 </p:selectOneMenu>
                                 <br/>
                                 <p:outputLabel for="@next" value="Tipo Cita:"/>
                                 <br/>
                                 <p:selectOneMenu id="tipoCita" value="#{agendarBean.tipoCita}" label="Seleccione Tipo cita">
-                                    <f:selectItem itemLabel="Medicina General" itemValue="Medician General"/>
+                                    <f:selectItem itemLabel="Medicina General" itemValue="Medicina General"/>
                                     <f:selectItem itemLabel="Especialista" itemValue="Especialista"/>
                                     <f:selectItem itemLabel="Odontología" itemValue="Odontología"/>
                                     <f:selectItem itemLabel="Ortopedia" itemValue="Ortopedia"/>
@@ -59,7 +69,7 @@
                                 </p:selectOneMenu>
                             </div>
                             <div class="contenedor-infoD">
-                                <h5 >Pertenece a la EPS:</h5>
+                                <p:outputLabel for="@next" value="Pertenece a la EPS:"/>
                                 <br/>
                                 <p:selectOneButton value="#{agendarBean.pertenece}">
                                     <f:selectItem itemLabel="Si" itemValue="Si"/>
@@ -68,17 +78,17 @@
                                 <br/>
                                 <p:outputLabel for="fecha" value="Fecha de La Cita: "/>
                                 <br/>
-                                <p:datePicker id="fecha" value="#{agendarBean.fecha}" />
+                                <p:datePicker id="fecha" value="#{agendarBean.fecha}" inline="true"/>>
                             </div>
                         </div>
                     </section>
                     <section class="contenedor botones">
                         <div class="contenedor-botones">
                             <div class="botonA">
-                                <p:commandButton value="Agendar Cita " action="#{agendarBean.guardar()}" update=" msg"/>
+                                <p:commandButton value="Agendar Cita" action="#{agendarBean.guardar()}" update="msg"/>
                             </div>
                             <div class="botonA">
-                                <p:commandButton value="Cancelar " action="#{agendarBean.volver()}" />
+                                <p:commandButton value="Cancelar" action="#{agendarBean.volver()}" />
                             </div> 
                         </div>
                         <h:outputLabel id="msg" value="#{agendarBean.mensaje}" />
