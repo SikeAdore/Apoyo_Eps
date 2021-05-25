@@ -8,7 +8,7 @@ package web;
 import dato.Cita;
 import dato.Paciente;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
