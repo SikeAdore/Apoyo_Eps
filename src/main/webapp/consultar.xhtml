@@ -30,7 +30,7 @@
                                 <p:commandButton icon="pi pi-search" styleClass="rounded-button ui-button-success"  />
                             </span>
                             <br/>
-                            <p:dataTable class="tabla" id="eventsDT" var="Citas" value="#{consultarBean.listaCitas}" selectionMode="single"
+                            <p:dataTable  id="eventsDT" var="Citas" value="#{consultarBean.listaCitas}" selectionMode="single"
                                          selection="#{consultarBean.citaSeleccionada}" rowKey="#{cita.id}">
                                 <p:column headerText="Nombre Paciente">
                                     <h:outputText value="#{cita.paciente.nombre}" />
