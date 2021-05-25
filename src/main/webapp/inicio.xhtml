@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <html>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Pagina Principal</title>
+            <link href="estilos.css" rel="stylesheet" type="text/css"/>
+        </h:head>
+
+        <h:body >
+            <main>
+                <p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate/>
+                </p:messages>
+                <h2 class="titulo">Seleccione la opcion deseada</h2>
+                <section class="contenedor opciones">
+                    <div class="contenedor-opciones" >
+                        <div class="opcion">
+                            <h:form class="boton-p">
+                                <p:commandButton  value="Agendar Cita " action="agendar"  />
+                            </h:form>
+                            <h:outputText value="Agende una cita"/>
+                            <img src="imagenes/agendar.png" alt="" class="imagenIlustracion"/>
+                        </div >
+                        <div class="opcion">
+                            <h:form class="boton-p">
+                                <p:commandButton value="Consultar Citas " action="consultar" />
+                            </h:form>
+                            <h:outputText value="Consulte las citas de un paciente" />
+                            <img src="imagenes/consultar.jpg" alt="" class="imagenIlustracion"/>
+                        </div>
+                    </div>
+                </section> 
+            </main>
+        </h:body>
+    </html>
+</f:view>

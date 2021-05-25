@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <html>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Agendar Cita</title>
+            <link href="estilos.css" rel="stylesheet" type="text/css"/>
+        </h:head>
+        
+        <h:body>
+            <main>
+                <h:form>
+                    <p:messages id="messages" showDetail="true" closable="true">
+                    <p:autoUpdate/>
+                    </p:messages>
+                    <h2 class="titulo">Agendar Cita</h2>
+                    <section class="contenedor infoCita">
+                        <h3 class="subtitulo">Datos Cita:</h3>
+                        <div class="contenedor-info">
+                            <div class="contenedor-infoI">
+                                <span  class="ui-float-label">
+                                    <p:inputText id="nombre" value="#{agendarBean.nombre}"/>
+                                    <p:outputLabel for="@previous" value="Nombre Paciente"/>
+                                </span>
+                                <br/>
+                                <span class="ui-float-label">
+                                    <p:inputText id="documento" value="#{agendarBean.documento}">
+                                    <p:keyFilter mask="num" />
+                                    </p:inputText>
+                                    <p:outputLabel for="@previous" value="Documento Paciente"/>
+                                </span>
+                                <br/>
+                                <p:outputLabel for="@next" value="Hora Cita:"/>
+                                <br/>
+                                <p:selectOneMenu id="hora" value="#{agendarBean.hora}" >
+                                    <f:selectItem itemLabel="6:00" itemValue="6:00"/>
+                                    <f:selectItem itemLabel="7:00" itemValue="7:00"/>
+                                    <f:selectItem itemLabel="8:00" itemValue="8:00"/>
+                                    <f:selectItem itemLabel="9:00" itemValue="9:00"/>
+                                    <f:selectItem itemLabel="10:00" itemValue="10:00"/>
+                                    <f:selectItem itemLabel="11:00" itemValue="11:00"/>
+                                    <f:selectItem itemLabel="12:00" itemValue="12:00"/>
+                                    <f:selectItem itemLabel="13:00" itemValue="13:00"/>
+                                    <f:selectItem itemLabel="14:00" itemValue="14:00"/>
+                                    <f:selectItem itemLabel="15:00" itemValue="15:00"/>
+                                    <f:selectItem itemLabel="14:00" itemValue="16:00"/>
+                                    <f:selectItem itemLabel="16:00" itemValue="17:00"/>
+                                    <f:selectItem itemLabel="17:00" itemValue="18:00"/>
+                                </p:selectOneMenu>
+                                <br/>
+                                <p:outputLabel for="@next" value="Tipo Cita:"/>
+                                <br/>
+                                <p:selectOneMenu id="tipoCita" value="#{agendarBean.tipoCita}" label="Seleccione Tipo cita">
+                                    <f:selectItem itemLabel="Medicina General" itemValue="Medicina General"/>
+                                    <f:selectItem itemLabel="Especialista" itemValue="Especialista"/>
+                                    <f:selectItem itemLabel="Odontología" itemValue="Odontología"/>
+                                    <f:selectItem itemLabel="Ortopedia" itemValue="Ortopedia"/>
+                                    <f:selectItem itemLabel="Neurología" itemValue="Neurología"/>
+                                    <f:selectItem itemLabel="Oftalmología" itemValue="Oftalmología"/>
+                                    <f:selectItem itemLabel="Toma de Muestras" itemValue="Toma de Muestras"/>
+                                    <f:selectItem itemLabel="Examen Especializado" itemValue="Examen Especializado"/>
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="contenedor-infoD">
+                                <p:outputLabel for="@next" value="Pertenece a la EPS:"/>
+                                <br/>
+                                <p:selectOneButton value="#{agendarBean.pertenece}">
+                                    <f:selectItem itemLabel="Si" itemValue="Si"/>
+                                    <f:selectItem itemLabel="No" itemValue="No"/>
+                                </p:selectOneButton>
+                                <br/>
+                                <p:outputLabel for="fecha" value="Fecha de La Cita: "/>
+                                <br/>
+                                <p:datePicker id="fecha" value="#{agendarBean.fecha}" inline="true"/>>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="contenedor botones">
+                        <div class="contenedor-botones">
+                            <div class="botonA">
+                                <p:commandButton value="Agendar Cita" action="#{agendarBean.guardar()}" update="msg"/>
+                            </div>
+                            <div class="botonA">
+                                <p:commandButton value="Cancelar" action="#{agendarBean.volver()}" />
+                            </div> 
+                        </div>
+                        <h:outputLabel id="msg" value="#{agendarBean.mensaje}" />
+                    </section>
+                </h:form>
+            </main>
+        </h:body>
+    </html>
+</f:view>

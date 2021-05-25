@@ -1,0 +1,211 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-May-2021, 22:57:17
+    Author     : alejandro
+*/
+
+/*
+***General***
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body{
+    font-family: 'open sans';
+}
+
+
+.contenedor{
+    padding: 30px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    
+}
+
+.titulo{
+    color: #642a73;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.subtitulo{
+    color: ghostwhite;
+    background-color: blue;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+/*
+***Pagina Binevenido (index)**** 
+*/
+.contenedor-banner h1{
+    margin: 50px 25px;
+    color: darkblue;
+    font-size: 50px;
+    text-shadow: 2px 2px 2px blue;
+}
+
+.contenedor-banner{
+    display: flex;
+    background-color: rgba(255,165,0,0.6);
+    background-image: url(imagenes/bannerImagen.png);
+    background-attachment: fixed;
+    justify-content: center;
+}
+
+.imagen-salud{
+    width: 10%;
+}
+
+.contenedor-descripcion{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+.boton-i{
+    padding: 20px;
+}
+
+.contenedor-descripcion h4{
+    text-align: justify;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.contenedor-footer{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    background-color: buttonhighlight;
+}
+
+.contenedor-footer h4{
+    margin: 5px 5px;
+    font-size: 15px;
+}
+
+.imagen-logoU{
+    width: 3%;
+}
+
+/*
+***Pagina principal (inicio)***
+*/
+
+.contenedor-opciones{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: row;
+   padding-top: 200px;
+   
+}
+.boton-p{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.opcion{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: aquamarine;
+    width: 25%;
+    height: 200px;
+}
+.imagenIlustracion{
+    width: 90px;
+    height: 90px;
+    padding-top: 10px;
+    border-bottom: 1px solid black;
+}
+
+/*
+***Pagina Agendar cita (agendar)***
+*/
+
+.contenedor-info{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: row;
+   height: 400px;
+   
+}
+
+.contenedor-infoI{
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    width: 50%;
+    height: 450px;
+    padding-top: 25px;
+    padding-left: 200px;
+        
+}
+
+.contenedor-infoD{
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    width: 50%;
+    height: 450px;
+    padding-top: 20px;
+    padding-left: 200px;
+}
+
+.contenedor-botones{
+     display: flex;
+     justify-content: center;
+     padding-top: 0;
+     
+}
+
+.botonA{
+    padding-right:20px;
+    
+}
+    
+/*
+***Pagina Consultar Citas (consultar)***
+*/
+.contenedor-citas{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: row;
+   height: 500px;
+   
+}
+
+.contenedor-buscador{
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    width: 50%;
+    height: 450px;
+    padding-top: 25px;
+    padding-left: 200px;
+        
+}
+
+.contenedor-opciones{
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    width: 50%;
+    height: 450px;
+    padding-top: 20px;
+    padding-left: 200px;
+}
