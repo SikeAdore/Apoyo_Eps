@@ -101,6 +101,7 @@ public class AgendarBean implements Serializable{
         Cita c = new Cita();
         Paciente p = new Paciente();
         if(this.nombre != null && this.documento != null && this.fecha != null && this.hora != null && this.pertenece != null && this.tipoCita != null){
+
             Date fechaA = new Date();
             if(this.fecha.before(fechaA)|| this.fecha.equals(fechaA)){
                 this.mensaje = "Error, Selecciones una fecha valida";
@@ -124,7 +125,6 @@ public class AgendarBean implements Serializable{
                     return "agendar";
                 }
             }
-            
         }else{
             this.mensaje = "Error, llene los campos de información e intente de nuevo ";
             return "agendar";

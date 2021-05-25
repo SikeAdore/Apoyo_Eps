@@ -22,6 +22,7 @@ public class Cita {
     private String hora;
     private String tipoCita;
     private String pertenece;
+
     private Integer costo;
     
     public String getPertenece() {
@@ -85,5 +86,4 @@ public class Cita {
     }
     
     
-   
 }
