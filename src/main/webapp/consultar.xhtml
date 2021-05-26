@@ -28,12 +28,16 @@
                                 <span  class="ui-float-label">
                                     <p:inputText id="documento" value="#{consultarBean.documento}"/>
                                     <p:outputLabel for="@previous" value="Documento del Paciente"/>
-                                    <p:commandButton icon="pi pi-search" styleClass="rounded-button ui-button-success" action="#{consultarBean.buscar()}" update="msg eventsDT" />
+                                    <p:commandButton icon="pi pi-search" styleClass="rounded-button ui-button-success" action="#{consultarBean.buscar()}" update="eventsDT" />
                                 </span>
-                                <h:outputLabel id="msg" value="#{consultarBean.mensaje}" />
                                 <br/>
-                                <p:dataTable  id="eventsDT" var="Citas" value="#{consultarBean.listaCitas}" selectionMode="single"
-                                              selection="#{consultarBean.citaSeleccionada}" rowKey="#{cita.fecha}">
+                                <p:dataTable  id="eventsDT" var="cita" value="#{consultarBean.listaCitas}" selectionMode="single"
+                                              selection="#{consultarBean.citaSeleccionada}" rowKey="#{cita.id}"
+                                              style="margin-bottom:0" paginator="true" rows="3">
+                                    <p:column headerText="Cita id">
+                                        <h:outputText value="#{cita.id}" />
+                                    </p:column>
+                                    
                                     <p:column headerText="Nombre Paciente">
                                         <h:outputText value="#{cita.paciente.nombre}" />
                                     </p:column>
@@ -52,7 +56,7 @@
                                     <p:commandButton  value="Consultar" />
                                 </div >
                                 <div class="botone-c">
-                                    <p:commandButton  value="Eliminar" />
+                                    <p:commandButton  value="Eliminar" action="#{consultarBean.eliminar()}"/>
                                 </div>
                                 <div class="botone-c">
                                     <p:commandButton  value="Modificar" />
@@ -61,6 +65,14 @@
                             </div>
                         </div>
                     </section>
+                    <section class="contenedor">
+                        <div class="contenedor-botones">
+                            <div class="boton-volver">
+                                <p:commandButton value="Cancelar" action="inicio" />
+                            </div>
+                        </div>
+                    </section>
+                    
                 </h:form>
             </main>
         </h:body>

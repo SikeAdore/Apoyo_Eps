@@ -178,7 +178,7 @@ body{
    align-items: center;
    justify-content: space-around;
    flex-direction: row;
-   height: 500px;
+   height: 300px;
 }
 
 .contenedoor-buscador{
@@ -186,7 +186,7 @@ body{
   align-items: baseline;
   flex-direction: column;
   width: 50%;
-  height: 400px;
+  height: 300px;
 }
 
 .contenedor-opciones{
@@ -194,12 +194,17 @@ body{
   align-items: center;
   flex-direction: column;
   width: 50%;
-  height: 400px;
+  height: 300px;
   flex-direction: column;
 }
 
 .botone-c{
     padding-bottom: 30px;
+}
+
+.boton-volver{
+    padding-top: 0;
+    padding-bottom: 200px;
 }
 
 

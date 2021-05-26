@@ -86,7 +86,22 @@ public class OperCita implements Operaciones<Cita> {
 
     @Override
     public int eliminar(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Conexiones c = new Conexiones();
+        Connection cActiva = c.conectarse();
+        if (cActiva != null || id !=null){
+            try {
+                String sql = "delete from citaso where id=? ";
+                PreparedStatement ps =  cActiva.prepareStatement(sql);
+                ps.setLong(1, id);
+                int rta = ps.executeUpdate();
+                return rta;
+            } catch (SQLException ex) {
+                Logger.getLogger(OperCita.class.getName()).log(Level.SEVERE, null, ex);
+            }finally{
+                c.desconectase(cActiva);
+            }
+        }
+        return 0;
     }
 
     @Override
