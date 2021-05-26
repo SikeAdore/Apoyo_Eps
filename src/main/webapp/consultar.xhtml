@@ -33,7 +33,7 @@
                                 <br/>
                                 <p:dataTable  id="eventsDT" var="cita" value="#{consultarBean.listaCitas}" selectionMode="single"
                                               selection="#{consultarBean.citaSeleccionada}" rowKey="#{cita.id}"
-                                              style="margin-bottom:0" paginator="true" rows="3">
+                                              style="margin-bottom:0" paginator="true" rows="3" >
                                     <p:column headerText="Cita id">
                                         <h:outputText value="#{cita.id}" />
                                     </p:column>
@@ -53,7 +53,8 @@
                             </div>
                             <div class="contenedor-opciones">
                                 <div class="botone-c">
-                                    <p:commandButton  value="Consultar" />
+                                    <p:commandButton  value="Consultar" update="citaDetalle" 
+                                 oncomplete="PF('Cita').show()" />
                                 </div >
                                 <div class="botone-c">
                                     <p:commandButton  value="Eliminar" action="#{consultarBean.eliminar()}"/>
@@ -72,6 +73,13 @@
                             </div>
                         </div>
                     </section>
+                    <p:dialog header="Información Cita" widgetVar="Cita" modal="true" showEffect="fade"
+                              hideEffect="fade" resizable="false">
+                        <p:outputPanel id="citaDetalle" style="text-align:center;">
+                            <p:inputText id="nombreC" value="fffff"/>
+                            <p:outputLabel for="@previous" value="Nombre del paciente"/>
+                        </p:outputPanel>
+                    </p:dialog>
                     
                 </h:form>
             </main>

@@ -16,9 +16,21 @@ public class Cita {
     private String hora;
     private String tipoCita;
     private String pertenece;
-
     private Integer costo;
     
+    public Cita(){
+        
+    }
+    
+    public Cita(Paciente p, String fecha,String hora, String tipoCita, String pertenece){
+        this.paciente = p;
+        this.hora = hora;
+        this.fecha = fecha;
+        this.tipoCita = tipoCita;
+        this.pertenece = pertenece;
+        setCosto();
+    }
+   
     public String getPertenece() {
         return pertenece;
     }
@@ -72,10 +84,13 @@ public class Cita {
     }
 
     public void setCosto() {
-        if("No".equals(this.pertenece)){
+        if("No".equals(this.pertenece)) {
             this.costo = 15000;
         }else if("Si".equals(this.pertenece)){
             this.costo = 0;
+        }
+        else{
+            this.costo = null;
         }
     }
 

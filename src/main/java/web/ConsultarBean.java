@@ -64,7 +64,7 @@ public class ConsultarBean implements Serializable{
         this.listaCitas = null;
         if(this.documento != null && !" ".equals(this.documento)){
             this.listaCitas = op.consultar(this.documento);
-            if (this.listaCitas.size() > 0) {
+            if (this.listaCitas.size() > 0 && this.listaCitas != null) {
                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se consultaron las citas del paciente con documento: "+this.documento));
             } else {
                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Warning", "No se encontraron citas agendadas para el paciente con documento: "+this.documento));

@@ -28,23 +28,27 @@ public class OperCita implements Operaciones<Cita> {
         Conexiones c = new Conexiones();
         Connection cActiva = c.conectarse();
         if (cActiva != null && dato != null && dato.getPaciente()!= null){
-            try {
-                String sql = "insert into citas (nombre_p, documento_p, fecha, hora, tipo, pertenece, costo) values (?,?,?,?,?,?,?)";
-                PreparedStatement ps =  cActiva.prepareStatement(sql);
-                ps.setString(1, dato.getPaciente().getNombre());
-                ps.setString(2,dato.getPaciente().getDocumento());
-                ps.setString(3,dato.getFecha());
-                ps.setString(4, dato.getHora());
-                ps.setString(5, dato.getTipoCita());
-                ps.setString(6, dato.getPertenece());
-                ps.setInt(7, dato.getCosto());
-                int rta = ps.executeUpdate();
-                return rta;
-            } catch (SQLException ex) {
-                Logger.getLogger(OperCita.class.getName()).log(Level.SEVERE, null, ex);
-            }finally{
-                c.desconectase(cActiva);
+            if(dato.getPaciente().getNombre()!= "" && dato.getPaciente().getDocumento() != "" &&
+                    dato.getFecha() != "" && dato.getHora() != "" && dato.getTipoCita() != "" ){
+                try {
+                    String sql = "insert into citas (nombre_p, documento_p, fecha, hora, tipo, pertenece, costo) values (?,?,?,?,?,?,?)";
+                    PreparedStatement ps = cActiva.prepareStatement(sql);
+                    ps.setString(1, dato.getPaciente().getNombre());
+                    ps.setString(2, dato.getPaciente().getDocumento());
+                    ps.setString(3, dato.getFecha());
+                    ps.setString(4, dato.getHora());
+                    ps.setString(5, dato.getTipoCita());
+                    ps.setString(6, dato.getPertenece());
+                    ps.setInt(7, dato.getCosto());
+                    int rta = ps.executeUpdate();
+                    return rta;
+                } catch (SQLException ex) {
+                    Logger.getLogger(OperCita.class.getName()).log(Level.SEVERE, null, ex);
+                } finally {
+                    c.desconectase(cActiva);
+                }
             }
+            
         }
         return 0;
     }
@@ -54,7 +58,7 @@ public class OperCita implements Operaciones<Cita> {
         Conexiones c = new Conexiones();
         Connection cActiva = c.conectarse();
         List<Cita> datos = new ArrayList();
-        if (cActiva != null){
+        if (cActiva != null && documento != null && documento != ""){
             try {
                 String sql = "select * from citas where documento_p=? ";
                 PreparedStatement ps = cActiva.prepareStatement(sql);
@@ -88,7 +92,7 @@ public class OperCita implements Operaciones<Cita> {
     public int eliminar(Long id) {
         Conexiones c = new Conexiones();
         Connection cActiva = c.conectarse();
-        if (cActiva != null || id !=null){
+        if (cActiva != null && id !=null){
             try {
                 String sql = "delete from citaso where id=? ";
                 PreparedStatement ps =  cActiva.prepareStatement(sql);
