@@ -10,6 +10,7 @@ import java.util.List;
 /**
  *
  * @author Vinni
+
  * @param <T>
  */
 public interface Operaciones<T> {

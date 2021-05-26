@@ -4,11 +4,6 @@
  * and open the template in the editor.
  */
 package dato;
-
-
-
-
-
 /**
  *
  * @author alejandro
@@ -84,9 +79,7 @@ public class Cita {
         }
     }
 
-    public void setCosto(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setCosto(Integer costo) {
+        this.costo = costo;
     }
-    
-    
-}
+ }
